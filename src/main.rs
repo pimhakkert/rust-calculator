@@ -38,13 +38,16 @@ fn main() {
         //Validate input to not have invalid characters
         let regex = Regex::new(r"^\s*((\d+(\.\d+)?|ans)\s*[\+\-\*\/%]\s*)*(\d+(\.\d+)?|ans)\s*$").unwrap();
 
-        if regex.is_match(&*input) == false {
-            println!("Invalid input!");
-            break;
-        }
+        // if regex.is_match(&*input) == false {
+        //     println!("Invalid input!");
+        //     break;
+        // }
 
-        //Example: "10 + 5"
+            //A list of strings ordered in infix notation: "3 + 5 * 7 / (2 + 2)"
         let input_arr: Vec<&str> = input.split_whitespace().collect();
+
+        //A list of strings ordered in postfix notation: "3 5 7 * 2 2 + / +"
+        let postfix_output: Vec<&str> = Vec::new();
 
         let mut operators: Vec<char> = Vec::new();
         let mut numbers: Vec<f32> = Vec::new();
